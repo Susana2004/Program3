@@ -31,8 +31,23 @@ public class Person {
         }
         System.out.println("Age: " + age);
     }
+}
+class Employee extends Person {
+    private int empId;
+    private double salary;
+    public Employee(String name, int empId, double salary) {
+        super(name);
+        this.empId = empId;
+        this.salary = salary;
+    }
+    public void displayEmployeeDetails() {
+        displayName();
+        System.out.println("Employee ID: " + empId);
+        System.out.println("Salary: $" + salary);
+    }
     public static void main(String[] args) {
-        Person p = new Person("Susana");
-        System.out.println("Name : " + p.name);
+        Employee emp = new Employee("Alice", 101, 60000.0);
+        emp.displayEmployeeDetails();
+        emp.displayAge("15-04-1995"); // or use "1995-04-15"
     }
 }
